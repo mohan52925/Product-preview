@@ -1,0 +1,58 @@
+const productData = {
+    "id": "1",
+    "name": "Men Navy Blue Solid Sweatshirt",
+    "preview": "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
+    "photos": [
+      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
+      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/efc3d5b9-1bb3-4427-af53-7acae7af98951541402833591-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-2.jpg",
+      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/c7e58861-3431-4189-9903-9880f5eebd181541402833566-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-3.jpg",
+      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/66490b64-32de-44b4-a6e4-fe36f1c040051541402833548-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-4.jpg",
+      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/957be784-7c5d-4e90-ab9f-0928015b22891541402833645-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-5.jpg"
+    ],
+    "description": "Navy solid sweatshirt with patchwork, has a round neck, long sleeves, straight hem",
+    "size": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "isAccessory": false,
+    "brand": "United Colors of Benetton",
+    "price": 2599
+  }
+  preview()
+  updateimg()
+  
+  function preview(){
+    document.getElementById("previewimage").src=productData.preview
+  }
+  function updateimg(){
+  productData.photos.forEach(function(val,index){
+    const imagewrapper=document.createElement("div")
+    imagewrapper.classList.add("addedimg")
+    imagewrapper.onclick=function(){
+      updateimgindex(index)
+    }
+    if(index===0){
+      imagewrapper.classList.add("border")
+    }
+    const imgcontent=document.createElement("img")
+    imgcontent.src=val;
+    imgcontent.classList.add("addimg")
+    imagewrapper.appendChild(imgcontent)
+    document.getElementById("main-image").appendChild(imagewrapper)
+  })
+}
+function updateimgindex(index){
+  document.getElementById("previewimage").src=productData.photos[index]
+  const otherimg=document.getElementsByClassName("addedimg")
+  for(let i=0;i< otherimg.length;i++){
+    otherimg[i].classList.remove("border")
+  }
+  otherimg[index].classList.add("border")
+}
+
+ 
+  
+     
