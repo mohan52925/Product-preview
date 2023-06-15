@@ -10,16 +10,16 @@
   /* border: solid black; */
   margin: 25px;
 }
-/* #main-image{
+#main-image{
   /* border: solid black; */
-/* } */ */
+ } 
 .addedimg{
-  /* border: solid black; */
-  display: inline-flex;
-  margin: 20px;
+  display: inline-flex
 }
 .addimg{
+  /* border: solid black; */
   width: 80px;
+  margin: 5px;
 }
 .border{
   border: solid green;
@@ -39,9 +39,9 @@
     letter-spacing: 1px;
     color: rgb(27, 25, 25);
 }
-/* #img-container{
+#img-container{
   /* border: solid black; */
-/* } */
+ }
 #mencloth{
   display: flex;
   margin: 150px;
